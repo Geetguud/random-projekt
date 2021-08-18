@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Countdown</title>
+
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            html {
+                font-family: "Titillium Web", sans-serif;
+                font-size: 10px;
+            }
+
+            @media (max-width: 768px;) {
+                html {
+                    font-size: 6px;
+                }
+            }
+
+            body {
+                width: 100%;
+                height: 100%;
+                background-color: #f1f1f1;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #display-title {
+                font-size: 5.5em;
+                color: #444444;
+            }
+
+            #display {
+                width: 100%;
+                font-size: 4em;
+                font-weight: 600;
+                color: #333333;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                white-space: pre-line;
+            }
+
+            .display {
+                padding: 0.5em 0.5em;
+            }
+        </style>
+
+        <script>
+            let finalDate = new Date("Aug 30, 2020 00:00:00").getTime();
+
+            let countdown = setInterval(function() {
+                let now = new Date().getTime();
+                let distance = finalDate - now;
+                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                let hours = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+                let minutes = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
+                let seconds = Math.floor(distance % (1000 * 60) / (1000));
+                document.getElementById("days").innerHTML = days + "\n Days";
+                document.getElementById("hours").innerHTML = hours + "\n Hours";
+                document.getElementById("minutes").innerHTML = minutes + "\n Minutes";
+                document.getElementById("seconds").innerHTML = seconds + "\n Seconds";
+                if (distance < 0) {
+                    clearInterval(countdown);
+                    document.getElementById("display").innerHTML = "Fare Thee Well";
+                }
+            }, 250);
+        </script>
+    </head>
+
+    <body>
+        <h1 id="display-title">Countdown to School Return</h1>
+        <div id="display">
+            <div id="days" class="display"></div>
+            <div id="hours" class="display"></div>
+            <div id="minutes" class="display"></div>
+            <div id="seconds" class="display"></div>
+        </div>
+    </body>
+</html>

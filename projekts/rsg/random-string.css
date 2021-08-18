@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Roboto Slab", serif;
+    font-size: 10px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body {
+    background: #eeeeee;
+}
+
+.main {
+    width: 80rem;
+    height: 45rem;
+    flex-direction: row;
+    padding: 1rem;
+    color: #333333;
+    font-weight: 500;
+}
+
+.things {
+    width: 40%;
+    flex-direction: column;
+    padding: 2rem 0;
+    user-select: none;
+}
+
+.title {
+    font-size: 3.5em;
+    text-align: center;
+}
+
+.options {
+    margin: 1rem 0;
+    flex-direction: column;
+}
+
+.options label {
+    font-size: 2em;
+    margin: 0.4rem 0;
+}
+
+.options input {
+    margin: 0 0.5rem;
+    color: #333333;
+    font-family: "Roboto Slab", serif;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0.1rem 0.2rem;
+    border: 0.2rem solid #333333;
+    border-radius: 0.2rem;
+    background-color: #eeeeee;
+}
+
+.options input:hover {
+    background-color: #dddddd;
+}
+
+.dropdown {
+    margin: 0.6rem;
+    font-family: "Roboto Slab", serif;
+    font-size: 1.8em;
+    font-weight: 500;
+    padding: 0.2rem;
+    color: #333333;
+    border: 0.2rem solid #333333;
+    border-radius: 0.2rem;
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+
+.dropdown:hover {
+    background-color: #dddddd;
+}
+
+.button {
+    font-family: "Roboto Slab", serif;
+    font-size: 2em;
+    font-weight: 500;
+    padding: 0.2rem 0.3rem;
+    color: #333333;
+    border: 0.2rem solid #333333;
+    border-radius: 0.3rem;
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #dddddd;
+}
+
+.result {
+    width: 60%;
+    min-height: 75%;
+    border: 0.2rem solid #333333;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+    margin: 1rem;
+}
+
+.display {
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: center;
+    margin: 2rem;
+    font-size: 2em;
+}
+
+@media (max-width: 800px) {
+    .main {
+        width: auto;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .things, .result {
+        width: 100%;
+    }
+}

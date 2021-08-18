@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="basic-stats.css" rel="stylesheet" type="text/css">
+    <title>Basic Statistics Calculator</title>
+</head>
+<body>
+    <main>
+        <div class="inputs">
+            <h1 class="title">basic statistics calculator</h1>
+            <label for="input-data" class="input-label">input data :</label>
+            <textarea name="input-data" id="input-data" class="input-data font" placeholder="enter data here, divided with spaces (auto-sorting)"></textarea>
+            <button class="input-button font" onclick="compute()">compute</button>
+        </div>
+        <div class="tools">
+            <div class="tool">
+                <h2>mean</h2>
+                <p id="mean" class="display fadeto"></p>
+            </div>
+            <div class="tool">
+                <h2>mode</h2>
+                <p id="mode" class="display fadeto"></p>
+            </div>
+            <div class="tool">
+                <h2>median</h2>
+                <p id="median" class="display fadeto"></p>
+            </div>
+            <!-- <div class="tool">
+                <h2>quartile</h2>
+                <p id="quartile" class="display fadeto"></p>
+            </div>
+            <div class="tool">
+                <h2>decile</h2>
+                <p id="decile" class="display"></p>
+            </div>
+            <div class="tool">
+                <h2>percentile</h2>
+                <p id="percentile" class="display"></p>
+            </div> -->
+        </div>
+    </main>
+
+    <script src="stats-compute.js"></script>
+</body>
+</html>

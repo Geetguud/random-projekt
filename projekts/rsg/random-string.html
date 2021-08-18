@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="random-string.css" rel="stylesheet" type="text/css">
+    <script src="generate-string.js"></script>
+</head>
+
+<body class="body flex">
+    <main class="main flex">
+        <div class="things flex">
+            <h1 class="title">random string generator</h1>
+
+            <form class="options flex" onsubmit="generate()">
+                <label for="alphabets"><input type="checkbox" id="alphabets" name="options" checked>alphabets</label>
+                <label for="numbers"><input type="checkbox" id="numbers" name="options" checked>numbers</label>
+                <label for="length">length :<input type="number" id="length" name="options" value="256" min="4" max="512"></label>
+                <select id="dropdown" class="dropdown" name="options">
+                    <option value="mixed" selected="selected">mixed case</option>
+                    <option value="lower">lower case</option>
+                    <option value="upper">upper case</option>
+                </select>
+            </form>
+
+            <button class="button" onclick="generate()">generate</button>
+        </div>
+
+        <div class="result flex">
+            <p class="display" id="display"></p>
+        </div>
+    </main>
+</body>
+</html>

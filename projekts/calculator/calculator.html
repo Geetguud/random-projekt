@@ -1,0 +1,41 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="calculator.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/9c82a076ee.js" crossorigin="anonymous"></script>
+    <title>Calculator</title>
+</head>
+
+<body class="body">
+    <div class="result" id="result"></div>
+
+    <div class="buttons">
+        <div class="numbers">
+            <button class="button numbersbutton" type="button" name="1" onclick="numEnter(1)">1</button>
+            <button class="button numbersbutton" type="button" name="2" onclick="numEnter(2)">2</button>
+            <button class="button numbersbutton" type="button" name="3" onclick="numEnter(3)">3</button>
+            <button class="button numbersbutton" type="button" name="4" onclick="numEnter(4)">4</button>
+            <button class="button numbersbutton" type="button" name="5" onclick="numEnter(5)">5</button>
+            <button class="button numbersbutton" type="button" name="6" onclick="numEnter(6)">6</button>
+            <button class="button numbersbutton" type="button" name="7" onclick="numEnter(7)">7</button>
+            <button class="button numbersbutton" type="button" name="8" onclick="numEnter(8)">8</button>
+            <button class="button numbersbutton" type="button" name="9" onclick="numEnter(9)">9</button>
+            <button class="button numbersbutton" type="button" name="0" onclick="numEnter(0)">0</button>
+        </div>
+        
+        <div class="operators">
+            <button class="button operatorsbutton" type="button" name="backspace" onclick="backspace()"><i class="fas fa-backspace"></i></button>
+            <button class="button operatorsbutton" type="button" name="clear" onclick="cleare()"><i class="fas fa-stop"></i></button>
+            <button class="button operatorsbutton" type="button" name="/" onclick="operator('/')"><i class="fas fa-divide"></i></button>
+            <button class="button operatorsbutton" type="button" name="X" onclick="operator('x')"><i class="fas fa-times"></i></button>
+            <button class="button operatorsbutton" type="button" name="-" onclick="operator('-')"><i class="fas fa-minus"></i></button>
+            <button class="button operatorsbutton" type="button" name="+" onclick="operator('+')"><i class="fas fa-plus"></i></button>
+            <button class="button operatorsbutton" type="button" name="=" onclick="equals()"><i class="fas fa-equals"></i></button>
+        </div>
+    </div>
+
+    <h1 class="title" onclick="darkmode()">calculator</h1>
+
+    <script src="calculate.js"></script>
+</body>
+</html>

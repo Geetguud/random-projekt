@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 16px;
+            font-family: "Open Sans", sans-serif;
+            background: #fafafa;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
+        #clock {
+            width: 30rem;
+            height: 30rem;
+            margin: auto;
+            border: 0.5rem solid #222222;
+            border-radius: 50%;
+            position: relative;
+        }
+        #longhand {
+            width: 0.5rem;
+            height: 10rem;
+            background: #222222;
+            position: absolute;
+            top: 5rem;
+            left: 50%;
+            transform-origin: bottom center;
+            border-radius: 0.2rem;
+        }
+        #shorthand {
+            width: 0.5rem;
+            height: 8rem;
+            background: #222222;
+            position: absolute;
+            top: 7rem;
+            left: 50%;
+            transform-origin: bottom center;
+            border-radius: 0.2rem;
+        }
+        #center {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background: #222222;
+            position: absolute;
+            top: 14.75rem;
+            left: 50%;
+        }
+        .hour {
+            width: 0.5rem;
+            height: 0.5rem;
+            background: #222222;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform-origin: 0rem 14.5rem;
+            border-radius: 0.15rem;
+            display: flex;
+            justify-content: center;
+        }
+        #hour {background: #888888;}
+        .number {
+            position: absolute;
+            top: 1rem;
+            font-weight: 700;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">
+        <div id="longhand"></div>
+        <div id="shorthand"></div>
+        <div id="center"></div>
+        <div id="hour" class="hour"></div>
+    </div>
+</body>
+<script>
+    let longhand = document.getElementById("longhand");
+    let shorthand = document.getElementById("shorthand");
+    let seconds = document.getElementById("hour");
+    let deg = 0;
+    function longhandtick() {
+        let currentmin = (new Date().getMinutes()) * 6;
+        let currentprogress = (new Date().getSeconds()) / 10;
+        let tick = currentmin + currentprogress;
+        longhand.style.transform = `rotate(${tick}deg)`;
+    }
+    function shorthandtick() {
+        let currenthr = (new Date().getHours() + 7) * 30;
+        let currentprogress = (new Date().getMinutes()) / 2;
+        let tick = (currenthr % 360) + currentprogress;
+        shorthand.style.transform = `rotate(${tick}deg)`;
+    }
+    function secondtick() {
+        let currentsec = (new Date().getSeconds()) * 6;
+        let currentprogress = (new Date().getMilliseconds()) * 6 / 1000;
+        let tick = currentsec + currentprogress;
+        seconds.style.transform = `rotate(${tick}deg)`;
+    }
+    setInterval(longhandtick, 1000);
+    setInterval(shorthandtick, 2000);
+    setInterval(secondtick, 25);
+    // setInterval(() => {document.getElementById("clock").style.transform = `rotate(${deg += 0.5}deg)`;}, 25);
+    longhandtick() || shorthandtick() || secondtick();
+    (function() {
+        let container = document.getElementById("clock");
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+        arr.forEach(each => {
+            let hour = document.createElement("div");
+            hour.classList.add("hour");
+            hour.style.transform = `rotate(${each * 30}deg)`;
+            hour.innerHTML = `<div class="number" style="transform: rotate(${-(each * 30)}deg);">${each}</div>`;
+            container.appendChild(hour);
+        });
+    })()
+</script>
+</html>
